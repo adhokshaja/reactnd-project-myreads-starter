@@ -80,6 +80,7 @@ background-image: linear-gradient( 135deg, #ABDCFF 0%, #0396FF 100%);
   z-index: 5;
   display: flex;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+   z-index:100;
 }
 .search-books-input-wrapper {
   flex: 1;
@@ -91,6 +92,7 @@ background-image: linear-gradient( 135deg, #ABDCFF 0%, #0396FF 100%);
   font-size: 1.25em;
   border: none;
   outline: none;
+
 }
 
 .close-search {

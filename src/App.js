@@ -23,16 +23,14 @@ class BooksApp extends Component {
   }
 
   onChangeShelf = (bookToBeUpdated,shelf,history)=>{
-    BooksAPI.update(bookToBeUpdated,shelf).then(()=>{
-      bookToBeUpdated.shelf=shelf; // change the shelf to new.
+    BooksAPI.update(bookToBeUpdated,shelf);
+    bookToBeUpdated.shelf=shelf; // change the shelf to new.
       this.setState((prevState) =>{
         return {booksList : [...prevState.booksList.filter(b=>(b.id !== bookToBeUpdated.id)),bookToBeUpdated]}
           //Remove old copy and replace with new one.
           //TODO: Find a better method to do this.
         }
       )
-      
-    });
   }
 
   render() {
