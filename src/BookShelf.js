@@ -12,7 +12,7 @@ class BookShelf extends Component{
 			<div>
 			<div className="list-books">
             <div className="list-books-title">
-              <h1>MyReads</h1>
+              <h1><span className="thin-font">My</span>Reads</h1>
             </div>
             <div className="list-books-content">
               <div>

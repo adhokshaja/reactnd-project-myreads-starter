@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,200');
 html {
   box-sizing: border-box;
 }
@@ -7,5 +8,5 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+   font-family: 'Source Sans Pro', sans-serif;
 }
