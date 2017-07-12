@@ -1,6 +1,6 @@
 # udacity-react-fundamentals-myReads
 
-MyReads web app is created using ReactJS as a part of the Udacity React Nanodegree program. Application is intended to 
+MyReads web app is created using ReactJS as a part of the Udacity React Nanodegree program.
 
 ## About
 
