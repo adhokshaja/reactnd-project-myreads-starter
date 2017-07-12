@@ -40,7 +40,7 @@ class SearchBooks extends Component{
 	              <ol className="books-grid">
 					{this.state.booksQueryResults.map(book=>(
                         <li key={book.id}>
-                          <BookView Book = {book} onChangeShelf={this.props.onChangeShelf}/> 
+                          <BookView Book = {book} getBookShelf={this.props.getBookShelf} onChangeShelf={this.props.onChangeShelf}/> 
                         </li>
                       ))}
 	              </ol>

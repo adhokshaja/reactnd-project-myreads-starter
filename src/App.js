@@ -22,9 +22,9 @@ class BooksApp extends Component {
     this.fetchBooks();
   }
 
-  onChangeShelf = (bookToBeUpdated,shelf,history)=>{
-    BooksAPI.update(bookToBeUpdated,shelf);
-    bookToBeUpdated.shelf=shelf; // change the shelf to new.
+  onChangeShelf = (bookToBeUpdated,newShelf,history)=>{
+    BooksAPI.update(bookToBeUpdated,newShelf);
+    bookToBeUpdated.shelf=newShelf; // change the shelf to new.
       this.setState((prevState) =>{
         return {booksList : [...prevState.booksList.filter(b=>(b.id !== bookToBeUpdated.id)),bookToBeUpdated]}
           //Remove old copy and replace with new one.
@@ -32,6 +32,18 @@ class BooksApp extends Component {
         }
       )
   }
+
+  getBookShelf = (book) => {
+      let currentShelf = this.state.booksList.filter((currentBook) => currentBook.id === book.id).map(book => {return book.shelf});
+      if(currentShelf.length !== 0){
+        console.log(currentShelf);
+        return currentShelf[0];
+      }
+      else{
+        return 'none';
+      }
+  }
+
 
   render() {
     return (
@@ -42,11 +54,14 @@ class BooksApp extends Component {
       />
       <Route path='/search'
         render={({history})=>(
-           <SearchBooks onChangeShelf={(book,shelf)=>{
-              this.onChangeShelf(book,shelf,history);
-              history.push('/');
+         <SearchBooks 
+            getBookShelf = {this.getBookShelf}
+            onChangeShelf={(book,shelf)=>{
+                this.onChangeShelf(book,shelf,history);
+                history.push('/');
+              } 
             }
-          }/>   
+          />   
         )}
       />
       </div>

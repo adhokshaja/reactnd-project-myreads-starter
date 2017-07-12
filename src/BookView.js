@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 const BookView = function(props) {
-	const {Book,onChangeShelf} = props;
+	const {Book,onChangeShelf,getBookShelf} = props;
 	Book.authors = Book.authors ||[];
+	Book.shelf = typeof(getBookShelf) ==='function' ? getBookShelf(Book):Book.shelf; 
 	return(
 		<div className="book">
 		  <div className="book-left">
@@ -34,7 +34,7 @@ const BookView = function(props) {
 			        <span className={`select-${Math.ceil(Book.averageRating)}stars`}>
 			        	<span className="star"></span><span className="star"></span><span className="star"></span><span className="star"></span><span className="star"></span> 
 			        </span>
-			        <span className="numeric-rating">({Book.averageRating}) </span>
+			        <span className="numeric-rating">({Book.averageRating})</span>
 		         </div>
 			    }
 		  </div>
