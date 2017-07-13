@@ -22,7 +22,7 @@ class BookShelf extends Component{
                     <ol className="books-grid">
                       {currentlyReadingBooks.map(book=>(
                         <li key={book.id}>
-                          <BookView Book = {book} onChangeShelf={onChangeShelf}/> 
+                          <BookView book = {book} onChangeShelf={onChangeShelf}/> 
                         </li>
                       ))}
                     </ol>
@@ -34,7 +34,7 @@ class BookShelf extends Component{
                     <ol className="books-grid">
                         {wantToReadBooks.map(book=>(
                            <li key={book.id}>
-                            <BookView Book = {book} onChangeShelf={onChangeShelf}/> 
+                            <BookView book = {book} onChangeShelf={onChangeShelf}/> 
                           </li>
                         ))}
                     </ol>
@@ -46,7 +46,7 @@ class BookShelf extends Component{
                    <ol className="books-grid">
                         {readBooks.map(book=>(
                            <li key={book.id}>
-                            <BookView Book = {book} onChangeShelf={onChangeShelf}/> 
+                            <BookView book = {book} onChangeShelf={onChangeShelf}/> 
                           </li>
                         ))}
                     </ol>

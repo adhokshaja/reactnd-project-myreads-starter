@@ -1,17 +1,17 @@
 import React from 'react';
 
 const BookView = function(props) {
-	const {Book,onChangeShelf,getBookShelf} = props;
-	Book.authors = Book.authors ||[];
-	Book.shelf = typeof(getBookShelf) ==='function' ? getBookShelf(Book):Book.shelf; 
+	const {book,onChangeShelf,getBookShelf} = props;
+	book.authors = book.authors ||[];
+	book.shelf = typeof(getBookShelf) ==='function' ? getBookShelf(book):book.shelf; 
 	return(
 		<div className="book">
 		  <div className="book-left">
 		    <div className="book-cover" 
-				style={{  backgroundImage: `url("${Book.imageLinks.smallThumbnail}")` }}>
+				style={{  backgroundImage: `url("${book.imageLinks.smallThumbnail}")` }}>
 		    </div>
 		    <div className="book-shelf-changer">
-		      <select onChange={(event)=>onChangeShelf(Book,event.target.value)} defaultValue={Book.shelf}>
+		      <select onChange={(event)=>onChangeShelf(book,event.target.value)} defaultValue={book.shelf}>
 		        <optgroup label="Move to">
 			        <option value="currentlyReading">Currently Reading</option>
 			        <option value="wantToRead">Want to Read</option>
@@ -23,18 +23,18 @@ const BookView = function(props) {
 		  </div>
 		  <div className="book-info">
 			  <div className="book-title">
-			  {!Book.previewLink && <span>{Book.title}</span>}
-			  {Book.previewLink && <a href={Book.previewLink} target="_blank" title="Preview Book">{Book.title}</a>}
+			  {!book.previewLink && <span>{book.title}</span>}
+			  {book.previewLink && <a href={book.previewLink} target="_blank" title="Preview Book">{book.title}</a>}
 			  </div>
-				{ Book.authors.length>0 &&
-					<div className="book-authors">{Book.authors.join(", ")}</div>
+				{ book.authors.length>0 &&
+					<div className="book-authors">{book.authors.join(", ")}</div>
 				}
-			  {Book.averageRating &&
+			  {book.averageRating &&
 			  	 <div className="book-rating">
-			        <span className={`select-${Math.ceil(Book.averageRating)}stars`}>
+			        <span className={`select-${Math.ceil(book.averageRating)}stars`}>
 			        	<span className="star"></span><span className="star"></span><span className="star"></span><span className="star"></span><span className="star"></span> 
 			        </span>
-			        <span className="numeric-rating">({Book.averageRating})</span>
+			        <span className="numeric-rating">({book.averageRating})</span>
 		         </div>
 			    }
 		  </div>
