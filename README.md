@@ -1,19 +1,19 @@
 # udacity-react-fundamentals-myReads
 
-MyReads web app is created using ReactJS as a part of the Udacity React Nanodegree program. Application is intended to 
+MyReads web app is created using ReactJS as a part of the Udacity React Nanodegree program.
 
 ## About
 
 MyReads lets you manage your digital bookshelf. Supports three shelves **Currently Reading**, **Read** and **Want to Read**. Additionally you can search and add books to any shelf. 
 
 ## Installation
-	- Clone/Download this repo.
-	- Run `npm install`or `yarn install` in the project directory to install dependencies.
-	- Run `npm start` or `yarn start` to start the application locally on `port: 3000`.
-	- Navigate to `http://localhost:3000/` to view the application.
+- Clone/Download this repo.
+- Run `npm install`or `yarn install` in the project directory to install dependencies.
+- Run `npm start` or `yarn start` to start the application.
+- Navigate to `http://localhost:3000/` to view the application.
 
 ## Project Dependencies
-	Project dependencies can be found in the npm package manager file [package.json](package.json).
+Project dependencies can be found in the npm package manager file [package.json](package.json).
 
 
 ## Important
